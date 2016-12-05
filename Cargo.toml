@@ -3,4 +3,7 @@ name = "advent_of_code"
 version = "0.1.0"
 authors = ["Christopher Harris <chharris@linkedin.com>"]
 
+[lib]
+name = "advent_lib"
+
 [dependencies]
