@@ -1,3 +1,6 @@
+use std::collections::HashSet;
+
+#[derive(PartialEq, Eq, Hash)]
 struct Location {
   facing: i32,
   x: i32,
@@ -13,7 +16,7 @@ impl Location {
     match turn {
       Some('L') => self.facing -= 1,
       Some('R') => self.facing += 1,
-      Some(_) | None => println!("Weird: Invalid Direction")
+      Some(_) | None => panic!("Weird: Invalid Direction")
     }
 
     match self.facing {
@@ -38,5 +41,14 @@ pub fn find_distance(direction_string: String) {
     position.movement(String::from(direction));
     return position;
   });
+  println!("{}", location.x.abs() + location.y.abs());
+}
+
+pub fn find_second_visited_place(direction_string: String) {
+  let mut location = &Location { x: 0, y: 0, facing: 1 };
+  let mut visited = HashSet::new();
+
+  // TODO:
+
   println!("{}", location.x.abs() + location.y.abs());
 }
