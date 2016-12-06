@@ -30,3 +30,11 @@ pub fn direction_now_facing(turn_direction: TurnDirection, currently_facing: Dir
     }
   }
 }
+
+pub fn string_to_turn_direction(turn_str: &str) -> TurnDirection {
+  match turn_str {
+    "R" => TurnDirection::Right,
+    "L" => TurnDirection::Left,
+    _ => panic!("Invalid turn string: {}. Expected 'L' or 'R'" , turn_str)
+  }
+}
