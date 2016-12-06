@@ -1,5 +1,3 @@
-pub fn find_distance(directions: Vec<&str>) {
-  for direction in directions {
-    println!("{}", direction);
-  }
+pub fn find_distance(directions: String) {
+  println!("{}", directions);
 }
