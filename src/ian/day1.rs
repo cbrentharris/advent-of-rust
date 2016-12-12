@@ -1,6 +1,6 @@
 use std::collections::HashSet;
 
-#[derive(PartialEq, Eq, Hash)]
+#[derive(PartialEq, Eq, Hash, Copy, Clone, Debug)]
 struct Location {
   facing: i32,
   x: i32,
@@ -44,11 +44,19 @@ pub fn find_distance(direction_string: String) {
   println!("{}", location.x.abs() + location.y.abs());
 }
 
-pub fn find_second_visited_place(direction_string: String) {
-  let mut location = &Location { x: 0, y: 0, facing: 1 };
-  let mut visited = HashSet::new();
+pub fn find_twice_visited_place(direction_string: String) {
+  let mut position = Location { x: 0, y: 0, facing: 1 };
+  let mut visited: HashSet<Location> = HashSet::new();
 
-  // TODO:
+  let visited_twice = direction_string.split(", ").map(|direction| {
+    position.movement(String::from(direction));
+    return position;
+  }).take_while(|&position| {
+    visited.insert(position);
+    println!("{:?}", visited);
+    return !visited.contains(&position);
+  }).count();
 
-  println!("{}", location.x.abs() + location.y.abs());
+  // println!("{}", visited_twice.x.abs() + visited_twice.y.abs());
+  println!("{}", visited_twice);
 }
