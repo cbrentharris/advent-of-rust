@@ -3,7 +3,7 @@ use advent_lib::chris::day_2::{KeypadDirection, char_to_keypad_direction};
 use advent_lib::input_reader;
 
 #[test]
-fn turn_string_to_turn_direction_test() {
+fn keypad_char_to_direction() {
     assert_eq!(char_to_keypad_direction('L'), KeypadDirection::Left);
     assert_eq!(char_to_keypad_direction('R'), KeypadDirection::Right);
     assert_eq!(char_to_keypad_direction('U'), KeypadDirection::Up);
