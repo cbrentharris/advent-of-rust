@@ -1,5 +1,5 @@
 extern crate advent_lib;
-use advent_lib::chris::day_1::{Direction, TurnDirection, direction_now_facing, string_to_turn_direction};
+use advent_lib::chris::day_1::{Direction, TurnDirection, direction_now_facing, string_to_turn_direction, day_1};
 use advent_lib::input_reader;
 
 #[test]
@@ -17,6 +17,15 @@ fn direction_facing_test() {
 
 #[test]
 fn turn_string_to_turn_direction_test() {
-  assert_eq!(string_to_turn_direction("L"), TurnDirection::Left);
-  assert_eq!(string_to_turn_direction("R"), TurnDirection::Right);
+  assert_eq!(string_to_turn_direction('L'), TurnDirection::Left);
+  assert_eq!(string_to_turn_direction('R'), TurnDirection::Right);
+}
+
+#[test]
+fn day_1_test() {
+  let mut s = String::new();
+  input_reader::read_file("src/resources/day1/chris_input.txt", &mut s);
+  day_1(s);
+  // Uncomment to see output of day_1
+  // assert_eq!(true, false);
 }
