@@ -66,6 +66,6 @@ pub fn day_2(input: String) {
                 }
             }
         }
+        print!("{}", row_col_to_keypad_button(row, col));
     }
-    row_col_to_keypad_button(row, col);
 }
