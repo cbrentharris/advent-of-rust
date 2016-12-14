@@ -7,3 +7,4 @@ authors = ["Christopher Harris <chharris@linkedin.com>"]
 name = "advent_lib"
 
 [dependencies]
+regex = "0.1"
